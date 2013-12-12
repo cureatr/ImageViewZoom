@@ -1,0 +1,32 @@
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.3'
+    }
+}
+
+apply plugin: 'android-library'
+
+android {
+    compileSdkVersion 15
+    buildToolsVersion "17.0"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'ImageViewTouch/AndroidManifest.xml'
+            java.srcDirs = ['ImageViewTouch/src']
+            resources.srcDirs = ['ImageViewTouch/src']
+            aidl.srcDirs = ['ImageViewTouch/src']
+            renderscript.srcDirs = ['ImageViewTouch/src']
+            res.srcDirs = ['ImageViewTouch/res']
+            assets.srcDirs = ['ImageViewTouch/assets']
+        }
+    }
+}
